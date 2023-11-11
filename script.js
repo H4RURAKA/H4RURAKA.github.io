@@ -129,3 +129,87 @@ document.addEventListener("DOMContentLoaded", () => {
 		typeLetter();
 	}
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+	const canvas = document.getElementById("particle-canvas");
+	const ctx = canvas.getContext("2d");
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+
+	let particlesArray = [];
+
+	class Particle {
+		constructor() {
+			this.x = Math.random() * canvas.width;
+			this.y = Math.random() * canvas.height;
+			this.size = Math.random() * 5;
+			this.speedX = Math.random() * 0.6;
+			this.speedY = Math.random() * 3 + 2;
+			this.color = `hsla(${Math.random() * 360}, 100%, 80%, 0.5)`;
+		}
+
+		update() {
+			this.x += this.speedX;
+			this.y += this.speedY;
+
+			if (
+				this.x < 0 ||
+				this.x > canvas.width ||
+				this.y < 0 ||
+				this.y > canvas.height
+			) {
+				this.x = Math.random() * canvas.width;
+				this.y = Math.random() * canvas.height;
+				this.size = Math.random() * 5;
+			}
+
+			if (this.size > 0.2) this.size -= 0.1;
+			else this.size = Math.random() * 4;
+		}
+
+		draw() {
+			ctx.fillStyle = this.color;
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+			ctx.fill();
+		}
+	}
+
+	function init() {
+		particlesArray = [];
+		for (let i = 0; i < 100; i++) {
+			particlesArray.push(new Particle());
+		}
+	}
+
+	function animate() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		for (let i = 0; i < particlesArray.length; i++) {
+			particlesArray[i].update();
+			particlesArray[i].draw();
+		}
+		requestAnimationFrame(animate);
+	}
+
+	init();
+	animate();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+	const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+	const modeText = document.getElementById("mode-text");
+
+	darkModeToggle.addEventListener("change", () => {
+		document.body.classList.toggle("dark-mode");
+		const timeline = document.querySelector(".timeline");
+		const timelineItems = document.querySelectorAll(".timeline-item");
+		if (timeline) timeline.classList.toggle("darkmode");
+		timelineItems.forEach((item) => item.classList.toggle("darkmode"));
+		if (document.body.classList.contains("dark-mode")) {
+			modeText.textContent = "LIGHT MODE";
+		} else {
+			modeText.textContent = "DARK MODE";
+		}
+	});
+});

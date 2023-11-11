@@ -16,6 +16,80 @@ section {
 	flex-direction: column;
 }
 
+/*-------------------------------------------*/
+
+.dark-mode-switcher {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#mode-text {
+	margin-top: 10px;
+	font-size: 16px;
+	color: #333;
+	width: 100px;
+	text-align: center;
+}
+
+body.dark-mode #mode-text {
+	color: #f5f5f5;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: 0.4s;
+	border-radius: 34px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: 0.4s;
+	border-radius: 50%;
+}
+
+input:checked + .slider {
+	background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+	transform: translateX(26px);
+}
+
+.slider:hover {
+	background-color: #b3d4fc;
+}
+
+/*-------------------------------------------*/
+
 #home h1 {
 	font-size: 3em;
 	font-weight: bold;
@@ -89,6 +163,7 @@ nav a {
 
 #skills {
 	width: 60%;
+	min-width: 35em;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -113,7 +188,7 @@ nav a {
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 5px;
-	background-color: #ddd;
+	background-color: rgba(221, 221, 221, 0.5);
 }
 
 .skill-percentage {
@@ -146,108 +221,13 @@ nav a {
 	padding: 20px;
 
 	width: 40%;
+	min-width: 35em;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #education-achievements h2 {
 	margin-bottom: 5%;
-}
-
-.timeline {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	width: 80%;
-}
-
-.timeline::before {
-	content: "";
-	position: absolute;
-	left: 50%;
-	top: 0;
-	bottom: 0;
-	width: 2px;
-	background: #333;
-	transform: translateX(-50%);
-}
-
-.timeline-item {
-	position: relative;
-	width: 40%;
-	padding: 10px 0;
-}
-
-.timeline-item.left {
-	left: 0;
-	text-align: right;
-}
-
-.timeline-item.right {
-	left: 60%;
-	text-align: left;
-}
-
-/*년도 박스 설정*/
-.timeline-item::after {
-	content: attr(data-year);
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background: #a8a8a8;
-	color: rgb(91, 91, 91);
-	padding: 3px 7px;
-	border-radius: 7px;
-}
-
-.timeline-item:nth-child(1)::after {
-	background: #ffe2c9;
-}
-.timeline-item:nth-child(2)::after {
-	background: rgb(214, 214, 255);
-}
-.timeline-item:nth-child(3)::after {
-	background: #fff59c;
-}
-.timeline-item:nth-child(4)::after {
-	background: #beffff;
-}
-.timeline-item:nth-child(5)::after {
-	background: rgb(202, 255, 205);
-}
-
-.timeline-item.left::after {
-	right: -60%; /* 왼쪽 항목의 연도 위치 */
-}
-
-.timeline-item.right::after {
-	left: -60%; /* 오른쪽 항목의 연도 위치 */
-}
-
-/*내용 ~ 중심선 긋는 선분 설정*/
-.timeline-item::before {
-	content: "";
-	position: absolute;
-	width: 15%; /* 선의 길이 */
-	height: 2px; /* 선의 두께 */
-	background: #000000;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.timeline-item.left::before {
-	right: -25%;
-	text-align: right;
-}
-
-.timeline-item.right::before {
-	left: -25%;
-	text-align: left;
-}
-
-.timeline-content p {
-	margin: 0;
-	font-size: 16px;
 }
 
 /*-------------------------------------------*/
@@ -296,4 +276,188 @@ nav a {
 	font-size: 0.8em;
 	text-decoration: none;
 	color: #959595;
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+	display: none;
+}
+
+/* Mobile Menu */
+.mobile-menu ul {
+	list-style: none;
+	padding: 0;
+	display: none;
+}
+
+.mobile-menu ul li {
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+/* 다크모드 */
+body.dark-mode {
+	background-color: #1a1a1a;
+	color: #f5f5f5;
+}
+
+nav.dark-mode a {
+	color: #f5f5f5;
+}
+
+#home.dark-mode h1 {
+	color: #f5f5f5;
+}
+
+/*-------------------------------------------*/
+
+@media screen and (min-width: 600px) {
+	#particle-canvas {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1; /* 배경으로 설정 */
+	}
+
+	.timeline {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+	}
+
+	.timeline::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: #000000;
+		transform: translateX(-50%);
+	}
+
+	.timeline-item {
+		position: relative;
+		width: 40%;
+		padding: 10px 0;
+	}
+
+	.timeline-item.left {
+		left: 0;
+		text-align: right;
+	}
+
+	.timeline-item.right {
+		left: 60%;
+		text-align: left;
+	}
+
+	/*년도 박스 설정*/
+	.timeline-item::after {
+		content: attr(data-year);
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: #ffffff;
+		color: rgb(91, 91, 91);
+		padding: 3px 7px;
+		border-radius: 7px;
+	}
+
+	.timeline-item.left::after {
+		right: -60%; /* 왼쪽 항목의 연도 위치 */
+	}
+
+	.timeline-item.right::after {
+		left: -60%; /* 오른쪽 항목의 연도 위치 */
+	}
+
+	/*내용 ~ 중심선 긋는 선분 설정*/
+	.timeline-item::before {
+		content: "";
+		position: absolute;
+		width: 15%; /* 선의 길이 */
+		height: 2px; /* 선의 두께 */
+		background: #000000;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.timeline-item.left::before {
+		right: -25%;
+		text-align: right;
+	}
+
+	.timeline-item.right::before {
+		left: -25%;
+		text-align: left;
+	}
+
+	.timeline-content p {
+		margin: 0;
+		font-size: 16px;
+	}
+
+	.timeline-content-mobile {
+		display: none;
+	}
+
+	.timeline.darkmode::before {
+		background: #ffffff;
+	}
+
+	.timeline-item.darkmode::before {
+		background: #ffffff;
+	}
+}
+
+/*-------------------------------------------*/
+
+@media screen and (max-width: 600px) {
+	#home h1 {
+		font-size: 2em;
+	}
+
+	#home h2 {
+		font-size: 1.2em;
+	}
+
+	nav ul {
+		display: block;
+		font-size: 0.9em;
+	}
+
+	/*------------------------*/
+
+	.intro-text {
+		font-size: 18px;
+	}
+
+	.intro-text::first-letter {
+		font-size: 42px;
+		line-height: 1;
+		float: left;
+		margin-right: 8px;
+		margin-top: 8px;
+	}
+
+	.thx {
+		font-size: 17px;
+	}
+
+	/*------------------------*/
+
+	.timeline-content-mobile {
+		display: block;
+		font-size: 15px;
+		color: #959595;
+		padding-left: 2.5%;
+	}
 }

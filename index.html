@@ -7,6 +7,16 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<canvas id="particle-canvas"></canvas>
+
+		<div class="dark-mode-switcher">
+			<label class="switch">
+				<input type="checkbox" id="dark-mode-toggle" />
+				<span class="slider round"></span>
+			</label>
+			<span id="mode-text">DARK MODE</span>
+		</div>
+
 		<section id="home">
 			<h1 id="typing-effect"></h1>
 			<h2 id="sub-typing-effect">ㅤ</h2>
@@ -91,27 +101,42 @@
 			<div class="timeline">
 				<div class="timeline-item left" data-year="2001">
 					<div class="timeline-content">
-						<p>Born in Seoul, Korea</p>
+						<p>
+							Born in Seoul, Korea
+							<span class="timeline-content-mobile">in 2001</span>
+						</p>
 					</div>
 				</div>
 				<div class="timeline-item right" data-year="2017">
 					<div class="timeline-content">
-						<p>Obtained Linux Master 2 certification</p>
+						<p>
+							Obtained Linux Master 2 certification
+							<span class="timeline-content-mobile">in 2017</span>
+						</p>
 					</div>
 				</div>
 				<div class="timeline-item left" data-year="2019">
 					<div class="timeline-content">
-						<p>Graduated Myungduk Highschool</p>
+						<p>
+							Graduated Myungduk Highschool
+							<span class="timeline-content-mobile">in 2019</span>
+						</p>
 					</div>
 				</div>
 				<div class="timeline-item right" data-year="2020">
 					<div class="timeline-content">
-						<p>Admitted to the Software Department at SKKU.</p>
+						<p>
+							Admitted to the Software Department at SKKU.
+							<span class="timeline-content-mobile">in 2020</span>
+						</p>
 					</div>
 				</div>
 				<div class="timeline-item left" data-year="2022">
 					<div class="timeline-content">
-						<p>Army sergeant, honorable discharge</p>
+						<p>
+							Army sergeant, honorable discharge
+							<span class="timeline-content-mobile">in 2022</span>
+						</p>
 					</div>
 				</div>
 			</div>

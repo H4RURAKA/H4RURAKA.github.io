@@ -1,0 +1,299 @@
+body {
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	color: #333;
+}
+
+section {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#home h1 {
+	font-size: 3em;
+	font-weight: bold;
+	background: linear-gradient(45deg, #6dd5fa, #ff758c);
+
+	-webkit-background-clip: text;
+	color: transparent;
+	margin-bottom: 0;
+}
+
+#typing-effect {
+	text-align: left;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	padding: 0;
+}
+
+nav ul li {
+	margin: 0 10px;
+}
+
+nav ul li :hover {
+	color: #4a4a4a;
+}
+
+nav a {
+	text-decoration: none;
+	color: #959595;
+	font-weight: bold;
+}
+
+/*-------------------------------------------*/
+
+#introduction {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.intro-right {
+	max-width: 600px;
+}
+
+.intro-text {
+	font-size: 20px;
+	text-align: justify;
+}
+
+.intro-text::first-letter {
+	font-size: 48px;
+	line-height: 1;
+	float: left;
+	margin-right: 8px;
+	margin-top: 8px;
+}
+
+.thx {
+	font-size: 17px;
+	text-align: center;
+}
+
+/*-------------------------------------------*/
+
+#skills {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#skills h2 {
+	margin-bottom: 5%;
+}
+
+.skill {
+	margin-bottom: 20px;
+	width: 50%;
+}
+
+.skill-name {
+	font-size: 15px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.skill-bar {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5px;
+	background-color: #ddd;
+}
+
+.skill-percentage {
+	height: 20px;
+	background-color: rgb(212, 161, 253);
+	text-align: right;
+	line-height: 20px;
+	color: white;
+	border-radius: 5px;
+	transition: width 1s ease-in-out;
+}
+
+.skill:nth-child(2) .skill-percentage {
+	background-color: rgb(127, 127, 234);
+}
+.skill:nth-child(3) .skill-percentage {
+	background-color: #f08c8c;
+}
+.skill:nth-child(4) .skill-percentage {
+	background-color: #faffbb;
+}
+.skill:nth-child(5) .skill-percentage {
+	background-color: #7fecec;
+}
+
+/*-------------------------------------------*/
+
+#education-achievements {
+	position: relative;
+	padding: 20px;
+
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#education-achievements h2 {
+	margin-bottom: 5%;
+}
+
+.timeline {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.timeline::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: #333;
+	transform: translateX(-50%);
+}
+
+.timeline-item {
+	position: relative;
+	width: 40%;
+	padding: 10px 0;
+}
+
+.timeline-item.left {
+	left: 0;
+	text-align: right;
+}
+
+.timeline-item.right {
+	left: 60%;
+	text-align: left;
+}
+
+/*년도 박스 설정*/
+.timeline-item::after {
+	content: attr(data-year);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: #a8a8a8;
+	color: rgb(91, 91, 91);
+	padding: 3px 7px;
+	border-radius: 7px;
+}
+
+.timeline-item:nth-child(1)::after {
+	background: #ffe2c9;
+}
+.timeline-item:nth-child(2)::after {
+	background: rgb(214, 214, 255);
+}
+.timeline-item:nth-child(3)::after {
+	background: #fff59c;
+}
+.timeline-item:nth-child(4)::after {
+	background: #beffff;
+}
+.timeline-item:nth-child(5)::after {
+	background: rgb(202, 255, 205);
+}
+
+.timeline-item.left::after {
+	right: -60%; /* 왼쪽 항목의 연도 위치 */
+}
+
+.timeline-item.right::after {
+	left: -60%; /* 오른쪽 항목의 연도 위치 */
+}
+
+/*내용 ~ 중심선 긋는 선분 설정*/
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	width: 15%; /* 선의 길이 */
+	height: 2px; /* 선의 두께 */
+	background: #000000;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.timeline-item.left::before {
+	right: -25%;
+	text-align: right;
+}
+
+.timeline-item.right::before {
+	left: -25%;
+	text-align: left;
+}
+
+.timeline-content p {
+	margin: 0;
+	font-size: 16px;
+}
+
+/*-------------------------------------------*/
+
+#contact h2 {
+	margin-bottom: 5%;
+}
+
+.contact {
+	font-style: italic;
+	margin-bottom: 5%;
+}
+
+.contact ul {
+	list-style: none;
+	padding: 0;
+}
+
+.contact li {
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact .label {
+	width: 100px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.links ul {
+	list-style: none;
+	display: flex;
+	padding: 0;
+}
+
+.links ul li {
+	margin: 0 10px;
+}
+
+.links ul li :hover {
+	color: #4a4a4a;
+}
+
+.links a {
+	font-size: 0.8em;
+	text-decoration: none;
+	color: #959595;
+}

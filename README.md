@@ -6,9 +6,13 @@ This is my personal GitHub page project. This website serves as an introduction 
 
 ## 시작하기 (Getting Started)
 
-이 프로젝트는 GitHub Pages를 통해 호스팅됩니다. 다음 링크를 클릭하여 접속하실 수 있습니다. [H4RURAKA GitHub Page](https://h4ruraka.github.io/)
+이 프로젝트는 GitHub Pages를 통해 호스팅됩니다.
 
-This project is hosted through GitHub Pages. You can view the website at the following link: [H4RURAKA GitHub Page](https://h4ruraka.github.io/)
+다음 링크를 클릭하여 접속하실 수 있습니다. [H4RURAKA GitHub Page](https://h4ruraka.github.io/)
+
+This project is hosted through GitHub Pages.
+
+You can view the website at the following link: [H4RURAKA GitHub Page](https://h4ruraka.github.io/)
 
 ## 사용된 기술 (Technologies Used)
 
@@ -18,12 +22,21 @@ This project is hosted through GitHub Pages. You can view the website at the fol
 
 ## 기능 및 스크린샷 (Features and Screenshots)
 
--   추가 예정
+-   The Typing Effect
+
+![TypingEffectImg](images/typing.gif)
+
+-   Darkmode Toggles
+
+![DarkModeToggleImg](images/darkmode.gif)
+
+-   You can see others in [Page](https://h4ruraka.github.io/)
 
 ## 연락처 정보 (Contact Information)
 
 -   H4RURAKA - [GitHub](https://github.com/H4RURAKA)
 -   E-mail : qwdfgqw@naver.com
+-   Elses in the last of [Page](https://h4ruraka.github.io/)
 
 ## 라이선스 (License)
 
